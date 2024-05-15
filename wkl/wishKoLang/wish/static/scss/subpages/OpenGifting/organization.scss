@@ -1,0 +1,123 @@
+@import '../../additionals/setup.scss';
+
+.bg {
+    // filter: blur(50px);
+    // filter: blur(10px);
+    // filter: blur(10px);
+    
+}
+
+.content {
+    padding: 1rem 2rem;
+}
+
+#ORGANIZATION_PAGE {
+    @include flexBox(column, flex-start, center);
+    // border: 1px solid black;
+    // @include glass;
+
+    .org_name {
+        font-family: $heading;
+        width: 100%;
+        width: 98%;
+        padding: 1rem 4rem;
+        font-size: 3rem;
+    }
+
+    .header {
+        @include flexBox(row, space-between, flex-start);
+        padding: 1rem 4rem;
+        width: 98%;
+        min-height: 50vh;
+        gap: 2rem;
+        position: relative;
+
+        img {
+            @include glass;
+            width: 60%;
+            border-radius: 4px;
+            height: 100%;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            // box-shadow: var(--violet) -7px 7px 2px;
+            // border: 100px;
+        }
+
+        .description {
+            @include glass;
+            padding: 2rem 1.3rem;
+            background-color: white;
+            
+            
+            h1 {
+                font-size: 3rem;
+                font-family: $heading;
+                margin-bottom: 2rem;
+            }
+            
+        }
+    }
+
+    .body {
+        width: 100%;
+        padding: 3rem 4rem;
+        .body_title {
+            font-family: $heading;
+        }
+
+        .members {
+            // border: $border;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            row-gap: 3rem;
+            padding: 3rem 2rem;
+            column-gap: 3rem;
+            .item {
+                @include glass;
+                @include flexBox(column, center, center);
+                padding: 2rem 1rem;
+                gap: 1rem;
+                background-color: white;
+                opacity: 100%;
+                // border: 2px solid #00000080;
+                // border: 1px solid var(--lavender);
+                // max-width: ;
+                img {
+                    width: 8rem;
+                    height: 8rem;
+                    border-radius: 100%;
+                    outline: 5px solid var(--violet);
+                    outline-offset: 5px;
+                }
+                .description {
+                    @include flexBox(column, flex-start, center);
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+                    h1 {
+                        font-family: $heading;
+                        text-align: center;
+                        font-size: 1.5rem;
+                    }
+                    p {
+                        font-family: $ordinary;
+                        text-align: justify;
+                        font-size: 0.95rem;
+                    }
+                }
+                .checkWishlistButton {
+                    @include button(var(--violet), var(--violet), white);
+                    font-family: $heading;
+                    font-weight: 800;
+                    opacity: 100%;
+                    font-size: 1rem;
+                    padding: 0.6rem;
+                    width: 100%;
+                    i {
+                        color: white;
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+}
