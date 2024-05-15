@@ -13,6 +13,11 @@
         <div class="login_container">
             <h1>Login</h1>
 
+            {% if error_message %}
+            <p class="error-message" style="color: red; font-weight: bold;">{{ error_message }}</p>
+            {% endif %}
+
+
             <div class="input_form">
                 <div class="input_container">
                     <label for="">Username</label>
@@ -32,8 +37,18 @@
 
             <div class="bottom">
                 <button class="login_button">Login</button>
-                <div class="signup">No account yet? Signup <a href="">here</a></div>
+                <div class="signup">No account yet? Signup <a href="{% url 'signup'%}">here</a></div>
             </div>
         </div>
+
+        <form method="post" action="{% url 'login'%}">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" /><br />
+            <label for="password">Password:</label>
+            <input type="password" name="password" /><br />
+            <input type="submit" />
+        </form>
+        
     </div>
 {% endblock %}
