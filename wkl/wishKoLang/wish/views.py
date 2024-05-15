@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from rest_framework.decorators import api_view
-from rest_framework import status
-from rest_framework.response import Response
+# from rest_framework import status
+# from rest_framework.response import Response
 
 from .models import User
 from .serializers import UserSerializer
@@ -53,14 +53,37 @@ def signup(request):
         if User.objects.filter(username=username).count():
             error_message = 'User already exists'
             return render(request, "wish/subpages/Initials/signup.html", {'error_message': error_message})
-        # if account.password == password:
-        #     return render(request, "wish/pages/home.html")
-        # else:
-        #     error_message = 'Incorrect password'
-        #     return render(request, "wish/subpages/Initials/login.html", {'error_message': error_message})
+        registered = User(username=username, password=password)
+        registered.save()
 
+        return render(request, "wish/subpages/Initials/setup.html", {"id":registered.id, "username":registered.username})
+
+@api_view(['GET', 'POST'])
 def setup(request):
-    return render(request, "wish/subpages/Initials/setup.html")
+    if request.method == 'GET':
+        return render(request, "wish/subpages/Initials/setup.html")
+    if request.method == 'POST':
+        id = request.POST.get("id")
+        profilePicture = request.POST.get("username")
+        birthday = request.POST.get("birthday")
+        firstname = request.POST.get("firstname")
+        lastname = request.POST.get("lastname")
+        emailaddress = request.POST.get("emailaddress")
+        bio = request.POST.get("bio")
+        try:
+            account = User.objects.get(id=id) # user found, check to see
+            account.profile_picture_link = profilePicture
+            account.birthday = birthday
+            account.first_name = firstname
+            account.last_name = lastname
+            account.email = emailaddress
+            account.bio = bio
+            account.save()
+            print(account)
+            return render(request, "wish/pages/home.html")
+        except User.DoesNotExist:
+            error_message = 'User does not exist'
+            return render(request, "wish/subpages/Initials/setup", {'error_message': error_message})
 
 def home(request):
     return render(request, "wish/pages/home.html")
