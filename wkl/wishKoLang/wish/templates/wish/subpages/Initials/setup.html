@@ -13,6 +13,10 @@
         <div class="setUp_box TOPSWING">
 
             <h1 class="title">Set up your account</h1>
+            {% if error_message %}
+            <p class="error-message" style="color: red; font-weight: bold;">{{ error_message }}</p>
+            {% endif %}
+            
             <div class="img_container">
                 <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="" width="150" height="150">
             </div>
@@ -77,6 +81,32 @@
             </div>
 
         </div>
-
+        <!-- image link
+username
+birthday
+firstname
+lastname
+emailaddress
+bio -->
+        <form method="post" action="{% url 'setup'%}">
+            {% csrf_token %}
+            <label for="id">Id:</label>
+            <input type="number" name="id" value="{{ id }}" readonly/><br />
+            <label for="imageLink">Image Link:</label>
+            <input type="text" name="imageLink" /><br />
+            <label for="username">Username:</label>
+            <input type="text" name="username"  value="{{ username }}" readonly/><br />
+            <label for="birthday">Birthday:</label>
+            <input type="text" name="birthday" /><br />
+            <label for="firstname">firstname:</label>
+            <input type="text" name="firstname" /><br />
+            <label for="lastname">lastname:</label>
+            <input type="text" name="lastname" /><br />
+            <label for="emailaddress">emailaddress:</label>
+            <input type="text" name="emailaddress" /><br />
+            <label for="bio">bio:</label>
+            <input type="text" name="bio" /><br />
+            <input type="submit" />
+        </form>
     </div>
 {% endblock %}

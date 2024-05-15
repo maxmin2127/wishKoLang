@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'wkl', 
     'wish',
-    'sass_processor'
+    'sass_processor',
+    'rest_framework'
 ]
 
 STATICFILES_FINDERS = [

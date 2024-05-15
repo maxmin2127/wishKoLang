@@ -2,7 +2,7 @@
 
 {% load sass_tags static %}
 
-{% block title %}Login{% endblock %}
+{% block title %}Signup{% endblock %}
 
 {% block css %}
 <link href="{% sass_src 'scss/subpages/Initials/login.scss' %}" rel="stylesheet" type="text/css" />
@@ -12,6 +12,10 @@
     <div id="LOGIN_PAGE">
         <div class="login_container">
             <h1>Sign Up</h1>
+            
+            {% if error_message %}
+            <p class="error-message" style="color: red; font-weight: bold;">{{ error_message }}</p>
+            {% endif %}
 
             <div class="input_form">
                 <div class="input_container">
@@ -39,8 +43,19 @@
 
             <div class="bottom">
                 <button class="login_button">Signup</button>
-                <div class="signup">Already have an account? Login <a href="">here</a></div>
+                <div class="signup">Already have an account? Login <a href="{% url 'login'%}">here</a></div>
             </div>
         </div>
+
+        <form method="post" action="{% url 'signup'%}">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" /><br />
+            <label for="password">Password:</label>
+            <input type="password" name="password" /><br />
+            <label for="confirmPassword">Confirm password:</label>
+            <input type="password" name="confirmPassword" /><br />
+            <input type="submit" />
+        </form>
     </div>
 {% endblock %}

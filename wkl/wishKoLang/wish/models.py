@@ -9,7 +9,8 @@ class User(models.Model):
     last_name = models.CharField(max_length=255)
     profile_picture_link = models.TextField() # serialized image string
     email = models.CharField(max_length=255)
-    birthday = models.DateField()
+    birthday = models.TextField()
+    bio = models.TextField()
 
     def __str__(self):
         return str(self.id) + " | " + self.first_name + " " + self.last_name
