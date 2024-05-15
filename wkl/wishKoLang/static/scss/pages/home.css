@@ -130,62 +130,109 @@
 .bg {
   filter: blur(2px); }
 
-#WELCOME_PAGE {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: stretch;
-  margin: 4rem 3rem;
-  gap: 2rem; }
-  #WELCOME_PAGE .gift_svg {
-    width: 50rem;
-    max-width: 500px; }
-  #WELCOME_PAGE .text_container {
-    margin: 1rem 2rem;
-    padding: 1rem; }
-    #WELCOME_PAGE .text_container .title {
-      color: var(--lavender-2);
-      font-weight: 900;
-      font-size: 5rem;
-      margin-bottom: 0.4rem;
-      font-family: url("../../../font/PowerGrotesk-Regular.ttf");
-      font-family: "Plus Jakarta Sans", "Poppins", sans-serif; }
-    #WELCOME_PAGE .text_container .desc1 {
-      width: 90%;
-      font-weight: 600;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-family: "Inter", "Poppins", sans-serif; }
-    #WELCOME_PAGE .text_container .desc2 {
-      width: 90%;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      font-family: "Inter", "Poppins", sans-serif; }
-    #WELCOME_PAGE .text_container a .startNow {
-      padding: 0.3rem 2rem;
-      background-color: transparent;
-      opacity: 90%;
-      border: 2px solid var(--dark-1);
-      color: var(--dark-1);
-      border-radius: 10px;
-      cursor: pointer;
-      font-family: "Mulish", "Poppins", sans-serif;
-      font-family: "Raleway", "Poppins", sans-serif;
-      font-weight: 800;
-      font-size: 1.2rem;
-      padding: 0.5rem 4rem;
-      transition: 0.3s; }
-      #WELCOME_PAGE .text_container a .startNow:hover {
-        padding: 0.3rem 2rem;
-        background-color: var(--dark-violet-2);
-        opacity: 90%;
-        border: 2px solid var(--dark-violet-2);
-        color: white;
-        border-radius: 10px;
-        cursor: pointer;
-        font-family: "Raleway", "Poppins", sans-serif;
-        font-weight: 800;
-        font-size: 1.2rem;
-        padding: 0.5rem 4rem; }
+:root {
+  --text-shadow: 2px 7px 5px rgba(111, 110, 110, 0.3),
+    0px -4px 10px rgba(255,255,255,0.3); }
 
-/*# sourceMappingURL=welcome.css.map */
+#HOME_PAGE {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #HOME_PAGE .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem; }
+    #HOME_PAGE .header h1, #HOME_PAGE .header p {
+      text-align: center; }
+    #HOME_PAGE .header .page_title {
+      text-align: center;
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      font-family: "Plus Jakarta Sans", "Poppins", sans-serif; }
+    #HOME_PAGE .header .subtexts {
+      width: 90%;
+      max-width: 90rem;
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      #HOME_PAGE .header .subtexts h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 80%;
+        width: 90%;
+        font-family: "Plus Jakarta Sans", "Poppins", sans-serif; }
+      #HOME_PAGE .header .subtexts p {
+        margin-top: 1rem;
+        width: 80%;
+        font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+        font-size: 1.2rem; }
+  #HOME_PAGE .motto {
+    background-color: var(--dark-violet);
+    border: 1px solid black;
+    padding: 1rem 4rem;
+    color: white;
+    font-family: "Space Grotesk", "Poppins", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    width: 100%; }
+  #HOME_PAGE .options {
+    width: 80%;
+    padding: 1rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.4rem;
+    row-gap: 2rem;
+    justify-items: center; }
+    #HOME_PAGE .options .item {
+      border-radius: 8px;
+      opacity: 90%;
+      cursor: pointer;
+      transition: background-color 0.5s;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      max-width: 17rem;
+      padding: 1rem;
+      border-width: 4px;
+      transition: 0.3s; }
+      #HOME_PAGE .options .item:hover {
+        opacity: 100%; }
+      #HOME_PAGE .options .item:hover {
+        transform: scale(0.97); }
+      #HOME_PAGE .options .item .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+        width: 100%;
+        padding: 1rem; }
+      #HOME_PAGE .options .item .bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1; }
+      #HOME_PAGE .options .item img {
+        width: 10rem;
+        height: 10rem; }
+      #HOME_PAGE .options .item h1 {
+        font-family: "Space Grotesk", "Poppins", sans-serif;
+        text-align: center;
+        font-size: 1.5rem; }
+
+/*# sourceMappingURL=home.css.map */

@@ -29,6 +29,10 @@ $special: $rockSalt;
     // color: #1D1D20;
 }
 
+// .bg {
+//     filter: blur(4px);
+// }
+
 
 // others
 @mixin flexBox($direction: row, $justifyContent: flex-start, $alignItems: stretch) {
@@ -57,7 +61,7 @@ $special: $rockSalt;
 }
 
 @mixin shrinkUponHover {
-
+    transition: 0.3s;
     &:hover {
         transform: scale(0.94);
     }
@@ -124,3 +128,8 @@ $special: $rockSalt;
 
 
 $border-dark: 3px solid #00000070;
+
+.bg {
+    filter: blur(2px);
+}
+

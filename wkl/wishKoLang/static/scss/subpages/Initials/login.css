@@ -130,62 +130,101 @@
 .bg {
   filter: blur(2px); }
 
-#WELCOME_PAGE {
+.content {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
-  margin: 4rem 3rem;
-  gap: 2rem; }
-  #WELCOME_PAGE .gift_svg {
-    width: 50rem;
-    max-width: 500px; }
-  #WELCOME_PAGE .text_container {
-    margin: 1rem 2rem;
-    padding: 1rem; }
-    #WELCOME_PAGE .text_container .title {
-      color: var(--lavender-2);
-      font-weight: 900;
-      font-size: 5rem;
-      margin-bottom: 0.4rem;
-      font-family: url("../../../font/PowerGrotesk-Regular.ttf");
+  padding: 1rem; }
+
+#LOGIN_PAGE {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  animation: fadeIn 0.8s; }
+  #LOGIN_PAGE .login_container {
+    border-radius: 8px;
+    opacity: 90%;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    padding: 3rem 1.5rem;
+    border-radius: 20px;
+    width: 50%;
+    max-width: 400px;
+    position: relative;
+    animation: swipeTop 0.5s;
+    gap: 1rem; }
+    #LOGIN_PAGE .login_container:hover {
+      opacity: 100%; }
+    #LOGIN_PAGE .login_container h1 {
       font-family: "Plus Jakarta Sans", "Poppins", sans-serif; }
-    #WELCOME_PAGE .text_container .desc1 {
-      width: 90%;
-      font-weight: 600;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-family: "Inter", "Poppins", sans-serif; }
-    #WELCOME_PAGE .text_container .desc2 {
-      width: 90%;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      font-family: "Inter", "Poppins", sans-serif; }
-    #WELCOME_PAGE .text_container a .startNow {
-      padding: 0.3rem 2rem;
-      background-color: transparent;
-      opacity: 90%;
-      border: 2px solid var(--dark-1);
-      color: var(--dark-1);
-      border-radius: 10px;
-      cursor: pointer;
-      font-family: "Mulish", "Poppins", sans-serif;
-      font-family: "Raleway", "Poppins", sans-serif;
-      font-weight: 800;
-      font-size: 1.2rem;
-      padding: 0.5rem 4rem;
-      transition: 0.3s; }
-      #WELCOME_PAGE .text_container a .startNow:hover {
+    #LOGIN_PAGE .login_container .input_form {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 1rem;
+      width: 100%;
+      margin: 0.5rem 0;
+      margin-bottom: 1.3rem; }
+      #LOGIN_PAGE .login_container .input_form .input_container {
+        width: 100%; }
+        #LOGIN_PAGE .login_container .input_form .input_container label {
+          font-size: 0.8rem;
+          margin-bottom: 15px; }
+        #LOGIN_PAGE .login_container .input_form .input_container .input_box {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: stretch;
+          width: 100%;
+          padding: 0.3rem 0.3rem;
+          padding-top: 0.6rem;
+          border-bottom: 2px solid #00000080; }
+          #LOGIN_PAGE .login_container .input_form .input_container .input_box input {
+            flex: 1;
+            height: 100%;
+            font-size: 1rem;
+            margin: 0 1rem;
+            border: none;
+            outline: none;
+            background-color: transparent; }
+    #LOGIN_PAGE .login_container .bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0.5rem;
+      width: 100%; }
+      #LOGIN_PAGE .login_container .bottom .login_button {
         padding: 0.3rem 2rem;
-        background-color: var(--dark-violet-2);
+        background-color: var(--dark-1);
         opacity: 90%;
-        border: 2px solid var(--dark-violet-2);
+        border: 2px solid var(--dark-1);
         color: white;
         border-radius: 10px;
         cursor: pointer;
-        font-family: "Raleway", "Poppins", sans-serif;
-        font-weight: 800;
-        font-size: 1.2rem;
-        padding: 0.5rem 4rem; }
+        border-radius: 2px;
+        float: right;
+        width: 100%;
+        padding: 0.6rem;
+        align-self: right; }
+      #LOGIN_PAGE .login_container .bottom .signup {
+        font-size: 0.8rem; }
+        #LOGIN_PAGE .login_container .bottom .signup a {
+          font-size: 0.8rem; }
 
-/*# sourceMappingURL=welcome.css.map */
+/*# sourceMappingURL=login.css.map */

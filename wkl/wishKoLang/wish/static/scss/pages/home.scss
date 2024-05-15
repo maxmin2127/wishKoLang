@@ -1,0 +1,117 @@
+@import '../additionals/setup.scss';
+
+
+:root {
+    --text-shadow: 2px 7px 5px rgba(111, 110, 110, 0.3),
+    0px -4px 10px rgba(255,255,255,0.3);
+}
+
+
+
+#HOME_PAGE {
+    @include flexBox(column, center, center);
+
+    .header {
+        @include flexBox(column, center, center);
+        // margin: 4rem 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        h1, p {
+            text-align: center;
+        }
+        .page_title {
+            text-align: center;
+            font-family: $heading;
+            font-size: 5rem;
+            // color: var(--dark-violet);
+            font-weight: 900;
+            // text-shadow: var(--text-shadow);
+            font-family: $jakarta;
+        }
+        .subtexts {
+            width: 90%;
+            max-width: 90rem;
+            margin: 1rem 0;
+            @include flexBox(column, center, center);
+            h1 {
+                text-align: center;
+                font-size: 1.8rem;
+                font-weight: 80%;
+                
+                width: 90%;
+                font-family: $jakarta;
+                // text-shadow: var(--text-shadow);
+            }
+            p {
+                margin-top: 1rem;
+                width: 80%;
+                font-family: $jakarta;
+                font-size: 1.2rem;
+                // background-color: var(--dark-violet);
+                // color: white;
+                // text-shadow: var(--text-shadow);
+            }
+        }
+    }
+
+    .motto {
+        background-color: var(--dark-violet);
+        border: $border;
+        padding: 1rem 4rem;
+        color: white;
+        font-family: $spaceGrotesk;
+        font-size: 1.4rem;
+        font-weight: 800;
+        width: 100%;
+    }
+
+    .options {
+        width: 80%;
+        padding: 1rem 3rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1.4rem;
+        row-gap: 2rem;
+        justify-items: center;
+        
+
+        .item {
+            @include glass;
+            @include flexBox(column, flex-start, center);
+            max-width: 17rem;
+            // background-color: white;
+            padding: 1rem;
+            border-width: 4px;
+            transition: 0.3s;
+
+            &:hover {
+                transform: scale(0.97);
+            }
+            // border-color: var(--violet);
+
+            .top {
+                @include flexBox(column, center, center);
+                height: 60%;
+                width: 100%;
+                padding: 1rem;
+            }
+            .bottom {
+                @include flexBox(column, center, center);
+                // border: $border-red;
+                flex: 1;
+            }
+
+            img {
+                width: 10rem;
+                height: 10rem;
+            }
+
+            h1 {
+                font-family: $spaceGrotesk;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+}

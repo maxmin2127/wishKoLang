@@ -18,8 +18,9 @@
         
         .title {
             // font-family: $heading;
-            font-weight: 700;
-            font-size: 4rem;
+            color: var(--lavender-2);
+            font-weight: 900;
+            font-size: 5rem;
             margin-bottom: 0.4rem;
             font-family: url("../../../font/PowerGrotesk-Regular.ttf");
             font-family: $heading;
@@ -27,14 +28,15 @@
         .desc1 {
             width: 90%;
             font-weight: 600;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+
             
             font-family: $ordinary;
         }
         .desc2 {
             width: 90%;
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             font-family: $ordinary;
         }
@@ -47,6 +49,15 @@
                 font-weight: 800;
                 font-size: 1.2rem;
                 padding: 0.5rem 4rem;
+                transition: 0.3s;
+
+                &:hover {
+                    @include button(var(--dark-violet-2), var(--dark-violet-2), white);
+                    font-family: $raleway;
+                    font-weight: 800;
+                    font-size: 1.2rem;
+                    padding: 0.5rem 4rem;
+                }
             }
         }
     }

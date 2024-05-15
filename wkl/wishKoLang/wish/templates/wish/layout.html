@@ -34,8 +34,22 @@
                     <a href="#"><li>Secret Santa</li></a>
                     <a href="#"><li>Friends</li></a>
                 </div>
+
+                
                 <a href="#">
-                    <button class="login_button button">Login</button>
+                    
+                    <button class="login_button button">
+                        {% if authenticated == False %}
+                            Login
+                        {% else %}
+                            Logout
+                        {% endif %}
+                    </button>
+                </a>
+
+
+                <a href="#">
+                    <img src="https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="prof" class="profile_pic">
                 </a>
             </div>            
         </nav>

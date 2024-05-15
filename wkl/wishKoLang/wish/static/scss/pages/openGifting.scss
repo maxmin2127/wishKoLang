@@ -85,6 +85,7 @@
             padding: 2rem 2rem;
             .item {
                 @include glass;
+                @include shrinkUponHover;
                 @include flexBox(row, flex-start, flex-start);
                 padding: 0.5rem 0.7rem;
                 gap: 1rem;
